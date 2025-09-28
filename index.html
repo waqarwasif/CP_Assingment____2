@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number System Conversion Chart</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .conversion-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .conversion-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .conversion-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+        }
+
+        .conversion-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+            border-color: #667eea;
+        }
+
+        .conversion-title {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            text-align: center;
+            padding: 10px;
+            background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+            border-radius: 8px;
+        }
+
+        .method {
+            background: #f8f9ff;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border-left: 4px solid #667eea;
+        }
+
+        .method-title {
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .steps {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .example {
+            background: #f0f8ff;
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 10px;
+            font-family: 'Courier New', monospace;
+            border-left: 4px solid #4ecdc4;
+            font-size: 0.9em;
+        }
+
+        .reference-table {
+            margin-top: 40px;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .reference-title {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        tr:hover {
+            background: #e3f2fd;
+            transition: background 0.3s ease;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .note {
+            background: #d1ecf1;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border-left: 4px solid #bee5eb;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🔢 Number System Conversion Chart</h1>
+
+        <div class="conversion-grid">
+            <!-- Decimal to Binary -->
+            <div class="conversion-card">
+                <div class="conversion-title">Decimal → Binary</div>
+                <div class="method">
+                    <div class="method-title">Division by 2 Method</div>
+                    <div class="steps">
+                        1. Divide the decimal number by 2<br>
+                        2. Write down the remainder (0 or 1)<br>
+                        3. Continue dividing quotient by 2<br>
+                        4. Read remainders from bottom to top
+                    </div>
+                    <div class="example">
+                        Example: 13 → Binary<br>
+                        13 ÷ 2 = 6 remainder 1<br>
+                        6 ÷ 2 = 3 remainder 0<br>
+                        3 ÷ 2 = 1 remainder 1<br>
+                        1 ÷ 2 = 0 remainder 1<br>
+                        Result: 1101₂
+                    </div>
+                </div>
+            </div>
+
+            <!-- Binary to Decimal -->
+            <div class="conversion-card">
+                <div class="conversion-title">Binary → Decimal</div>
+                <div class="method">
+                    <div class="method-title">Place Value Method</div>
+                    <div class="steps">
+                        1. Write place values (powers of 2)<br>
+                        2. Multiply each digit by its place value<br>
+                        3. Add all the products together
+                    </div>
+                    <div class="example">
+                        Example: 1101₂ → Decimal<br>
+                        1×2³ + 1×2² + 0×2¹ + 1×2⁰<br>
+                        1×8 + 1×4 + 0×2 + 1×1<br>
+                        8 + 4 + 0 + 1 = 13₁₀
+                    </div>
+                </div>
+            </div>
+
+            <!-- Decimal to Hexadecimal -->
+            <div class="conversion-card">
+                <div class="conversion-title">Decimal → Hexadecimal</div>
+                <div class="method">
+                    <div class="method-title">Division by 16 Method</div>
+                    <div class="steps">
+                        1. Divide the decimal number by 16<br>
+                        2. Write down the remainder (0-15)<br>
+                        3. Convert remainders > 9 to A-F<br>
+                        4. Read remainders from bottom to top
+                    </div>
+                    <div class="example">
+                        Example: 255 → Hex<br>
+                        255 ÷ 16 = 15 remainder 15 (F)<br>
+                        15 ÷ 16 = 0 remainder 15 (F)<br>
+                        Result: FF₁₆
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hexadecimal to Decimal -->
+            <div class="conversion-card">
+                <div class="conversion-title">Hexadecimal → Decimal</div>
+                <div class="method">
+                    <div class="method-title">Place Value Method</div>
+                    <div class="steps">
+                        1. Write place values (powers of 16)<br>
+                        2. Convert A-F to 10-15<br>
+                        3. Multiply each digit by place value<br>
+                        4. Add all products together
+                    </div>
+                    <div class="example">
+                        Example: FF₁₆ → Decimal<br>
+                        F×16¹ + F×16⁰<br>
+                        15×16 + 15×1<br>
+                        240 + 15 = 255₁₀
+                    </div>
+                </div>
+            </div>
+
+            <!-- Binary to Hexadecimal -->
+            <div class="conversion-card">
+                <div class="conversion-title">Binary → Hexadecimal</div>
+                <div class="method">
+                    <div class="method-title">Grouping Method</div>
+                    <div class="steps">
+                        1. Group binary digits in sets of 4 (from right)<br>
+                        2. Add leading zeros if needed<br>
+                        3. Convert each group to hex digit<br>
+                        4. Combine hex digits
+                    </div>
+                    <div class="example">
+                        Example: 11111111₂ → Hex<br>
+                        Group: 1111|1111<br>
+                        1111₂ = F₁₆<br>
+                        Result: FF₁₆
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hexadecimal to Binary -->
+            <div class="conversion-card">
+                <div class="conversion-title">Hexadecimal → Binary</div>
+                <div class="method">
+                    <div class="method-title">Direct Conversion Method</div>
+                    <div class="steps">
+                        1. Convert each hex digit to 4-bit binary<br>
+                        2. Combine all binary groups<br>
+                        3. Remove leading zeros if desired
+                    </div>
+                    <div class="example">
+                        Example: A3₁₆ → Binary<br>
+                        A₁₆ = 1010₂<br>
+                        3₁₆ = 0011₂<br>
+                        Result: 10100011₂
+                    </div>
+                </div>
+            </div>
+
+            <!-- Decimal to Octal -->
+            <div class="conversion-card">
+                <div class="conversion-title">Decimal → Octal</div>
+                <div class="method">
+                    <div class="method-title">Division by 8 Method</div>
+                    <div class="steps">
+                        1. Divide the decimal number by 8<br>
+                        2. Write down the remainder (0-7)<br>
+                        3. Continue dividing quotient by 8<br>
+                        4. Read remainders from bottom to top
+                    </div>
+                    <div class="example">
+                        Example: 64 → Octal<br>
+                        64 ÷ 8 = 8 remainder 0<br>
+                        8 ÷ 8 = 1 remainder 0<br>
+                        1 ÷ 8 = 0 remainder 1<br>
+                        Result: 100₈
+                    </div>
+                </div>
+            </div>
+
+            <!-- Octal to Decimal -->
+            <div class="conversion-card">
+                <div class="conversion-title">Octal → Decimal</div>
+                <div class="method">
+                    <div class="method-title">Place Value Method</div>
+                    <div class="steps">
+                        1. Write place values (powers of 8)<br>
+                        2. Multiply each digit by place value<br>
+                        3. Add all products together
+                    </div>
+                    <div class="example">
+                        Example: 100₈ → Decimal<br>
+                        1×8² + 0×8¹ + 0×8⁰<br>
+                        1×64 + 0×8 + 0×1<br>
+                        64 + 0 + 0 = 64₁₀
+                    </div>
+                </div>
+            </div>
+
+            <!-- Binary to Octal -->
+            <div class="conversion-card">
+                <div class="conversion-title">Binary → Octal</div>
+                <div class="method">
+                    <div class="method-title">Grouping Method</div>
+                    <div class="steps">
+                        1. Group binary digits in sets of 3 (from right)<br>
+                        2. Add leading zeros if needed<br>
+                        3. Convert each group to octal digit<br>
+                        4. Combine octal digits
+                    </div>
+                    <div class="example">
+                        Example: 1010101₂ → Octal<br>
+                        Group: 001|010|101<br>
+                        001₂=1₈, 010₂=2₈, 101₂=5₈<br>
+                        Result: 125₈
+                    </div>
+                </div>
+            </div>
+
+            <!-- Octal to Binary -->
+            <div class="conversion-card">
+                <div class="conversion-title">Octal → Binary</div>
+                <div class="method">
+                    <div class="method-title">Direct Conversion Method</div>
+                    <div class="steps">
+                        1. Convert each octal digit to 3-bit binary<br>
+                        2. Combine all binary groups<br>
+                        3. Remove leading zeros if desired
+                    </div>
+                    <div class="example">
+                        Example: 125₈ → Binary<br>
+                        1₈ = 001₂<br>
+                        2₈ = 010₂<br>
+                        5₈ = 101₂<br>
+                        Result: 001010101₂ = 1010101₂
+                    </div>
+                </div>
+            </div>
+
+            <!-- Octal to Hexadecimal -->
+            <div class="conversion-card">
+                <div class="conversion-title">Octal → Hexadecimal</div>
+                <div class="method">
+                    <div class="method-title">Binary Bridge Method</div>
+                    <div class="steps">
+                        1. Convert octal to binary (3 bits per digit)<br>
+                        2. Group binary in sets of 4 bits<br>
+                        3. Convert each group to hex digit
+                    </div>
+                    <div class="example">
+                        Example: 125₈ → Hex<br>
+                        125₈ → 001010101₂<br>
+                        Group: 0|0101|0101<br>
+                        0₂=0₁₆, 0101₂=5₁₆, 0101₂=5₁₆<br>
+                        Result: 55₁₆
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hexadecimal to Octal -->
+            <div class="conversion-card">
+                <div class="conversion-title">Hexadecimal → Octal</div>
+                <div class="method">
+                    <div class="method-title">Binary Bridge Method</div>
+                    <div class="steps">
+                        1. Convert hex to binary (4 bits per digit)<br>
+                        2. Group binary in sets of 3 bits<br>
+                        3. Convert each group to octal digit
+                    </div>
+                    <div class="example">
+                        Example: 55₁₆ → Octal<br>
+                        55₁₆ → 01010101₂<br>
+                        Group: 001|010|101<br>
+                        001₂=1₈, 010₂=2₈, 101₂=5₈<br>
+                        Result: 125₈
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="reference-table">
+            <div class="reference-title">📊 Quick Reference Tables</div>
+
+            <h3 style="color: #667eea; margin-top: 25px;">Hex to Decimal Conversion</h3>
+            <table>
+                <tr>
+                    <th>Hex</th>
+                    <th>0</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8</th>
+                    <th>9</th>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>C</th>
+                    <th>D</th>
+                    <th>E</th>
+                    <th>F</th>
+                </tr>
+                <tr>
+                    <td><strong>Decimal</strong></td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>15</td>
+                </tr>
+            </table>
+
+            <h3 style="color: #667eea; margin-top: 25px;">Powers Reference</h3>
+            <table>
+                <tr>
+                    <th>Power</th>
+                    <th>2⁰</th>
+                    <th>2¹</th>
+                    <th>2²</th>
+                    <th>2³</th>
+                    <th>2⁴</th>
+                    <th>2⁵</th>
+                    <th>2⁶</th>
+                    <th>2⁷</th>
+                </tr>
+                <tr>
+                    <td><strong>Binary</strong></td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>8</td>
+                    <td>16</td>
+                    <td>32</td>
+                    <td>64</td>
+                    <td>128</td>
+                </tr>
+            </table>
+
+            <table style="margin-top: 15px;">
+                <tr>
+                    <th>Power</th>
+                    <th>8⁰</th>
+                    <th>8¹</th>
+                    <th>8²</th>
+                    <th>8³</th>
+                    <th>16⁰</th>
+                    <th>16¹</th>
+                    <th>16²</th>
+                    <th>16³</th>
+                </tr>
+                <tr>
+                    <td><strong>Octal/Hex</strong></td>
+                    <td>1</td>
+                    <td>8</td>
+                    <td>64</td>
+                    <td>512</td>
+                    <td>1</td>
+                    <td>16</td>
+                    <td>256</td>
+                    <td>4096</td>
+                </tr>
+            </table>
+
+            <div class="note">
+                <strong>💡 Pro Tips:</strong><br>
+                • For Binary ↔ Hex: Group by 4 bits<br>
+                • For Binary ↔ Octal: Group by 3 bits<br>
+                • Always pad with leading zeros when grouping<br>
+                • Remember: A=10, B=11, C=12, D=13, E=14, F=15 in hex
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
